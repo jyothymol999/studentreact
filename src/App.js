@@ -4,11 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import  'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Addstudent from './Components/Addstudent';
 import Searchstudent from './Components/Searchstudent';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-    <Searchstudent/>
+
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' exact element={<Addstudent/>}/>
+        <Route path='/search' exact element={<Searchstudent/>}/>
+      </Routes>
+      </BrowserRouter>
+      
+
     </div>
   );
 }
